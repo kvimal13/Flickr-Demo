@@ -1,30 +1,20 @@
 <html>
 <head>
 <title>Zerodha-Flickr Demo</title>
-<script type="text/javascript" src="/resource/js/masonry.pkgd.min.js"></script>
-<script type="text/javascript" src="/resource/js/jquery-2.2.0.min.js"></script>
-<script type="text/javascript" src="/resource/js/imagesloaded.pkgd.min.js"></script>
-<link rel='stylesheet' media='screen' href='../resource/css/flickr.css' />
+<script type="text/javascript" src="public/resource/js/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="public/resource/js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="public/resource/js/imagesloaded.pkgd.min.js"></script>
+<link rel='stylesheet' media='screen' href='public/resource/css/flickr.css' />
 <body>
-	<div id="container">
-		<div class="item"></div>
-		<div class="item w2"></div>
-		<div class="item"></div>
-		<div class="item w2"></div>
-		<div class="item h2"></div>
-		<div class="item"></div>
-		<div class="item h2"></div>
-		<div class="item w2 h2"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item h2"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item w2"></div>
-		<div class="item h2"></div>
-		<div class="item"></div>
-		<div class="item h2"></div>
-	</div>
+	<div id="wrapper">
+	{% for item_name,item_image in value.items()%}
+	    <div id="list">
+	        <div class="item"> <img src="{{item_image}}"><b>{{item_name}} </b></div>
+	        <div class="item"> <img src="{{item_image}}"><b>{{item_name}}</b></div>
+	        <!-- ... -->
+	    </div>
+	{% endfor %}
+</div>
 
 </body>
 </head>
