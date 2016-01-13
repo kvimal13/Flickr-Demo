@@ -1,41 +1,19 @@
 #wrapper
 {
-    max-width: 60em; /* 960 px */
+    max-width: 60em; 
     margin: 0 auto;
 }
     #list
     {
-        width: 110%; /* 990px */
+        width: 110%;
         overflow: hidden;
-        margin-left: 20%; /* 15px */
-        margin-bottom: 5%; /* 30px */
+        margin-left: 20%; 
+        margin-bottom: 5%; 
     }
     .item
     {
-        width: 30.303%; /* 300px */
+        width: 30.303%; 
         float: left;
-        margin: 0 1.515% 1.875em; /* 15px 30px */
+        margin: 0 2% 2%; 
     }
  
-@media only screen and ( max-width: 40em ) /* 640px */
-{
-    .item
-    {
-        width: 46.876%; /* 305px */
-        margin-bottom: 0.938em; /* 15px */
-    }
-}
-@media only screen and ( max-width: 20em ) /* 640px */
-{
-    #list
-    {
-        width: 100%;
-        margin-left: 0;
-    }
-        .item
-        {
-            width: 100%;
-            margin-left: 0;
-            margin-right: 0;
-        }
-}
