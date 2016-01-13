@@ -19,7 +19,7 @@ class FlickrImages(object):
 	@cherrypy.expose
 	def index(self):
 		data = {}
-		threading.Timer(300, index).start()
+		threading.Timer(300, self.index).start()
 		response = requests.get(url='https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1')
 		raw_json = response.content
 		raw_json = unicode(raw_json, 'utf-8')
