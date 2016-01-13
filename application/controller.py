@@ -20,10 +20,10 @@ class FlickrImages(object):
 		raw_json = unicode(raw_json, 'utf-8')
 		res = json.loads("%s"%raw_json)
 		for items in res['items']:
-			redis_server.set('image_url',items['media']['m'])
-		image = redis_server.get('image_url')
+			redis_server.set(item['title'],items['media']['m'])
+		image = redis_server.get(item['title'])
 		tmpl = env.get_template('flickr.html')
-		return tmpl.render(value=image)
+		return tmpl.render(title=item['title'],image=image)
 
 
 def get_app(config=None):
