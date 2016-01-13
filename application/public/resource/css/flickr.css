@@ -16,4 +16,9 @@
         float: left;
         margin: 0 2% 2%; 
     }
+
+body {
+    background-image: url("public/resource/img/Background.jpg");
+    background-color: #cccccc;
+}
  
