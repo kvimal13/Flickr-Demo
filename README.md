@@ -14,7 +14,9 @@ virtualenv env
 #install necessary packages
 
 env/bin/pip install cherrypy
+
 env/bin/pip install redis
+
 env/pip install jinja2
 
 
