@@ -3,14 +3,15 @@ import cherrypy
 import redis
 import requests
 import json
-import config as conf
 import jinja2
 import os
 import threading
 import datetime
 
-viewLoader   = jinja2.FileSystemLoader(os.path.join(conf.path, 'public', 'resource','templates'))
+path   = os.path.abspath(os.path.dirname(__file__))
+viewLoader   = jinja2.FileSystemLoader(os.path.join(path, 'public', 'resource','templates'))
 env = jinja2.Environment(loader=viewLoader)
+
 
 redis_server = redis.StrictRedis()
 
@@ -18,8 +19,7 @@ class FlickrImages(object):
 	@cherrypy.expose
 	def index(self):
 		data = {}
-		threading.Timer(0.25, index).start()
-		print '-------------------------------'
+		threading.Timer(300, index).start()
 		response = requests.get(url='https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1')
 		raw_json = response.content
 		raw_json = unicode(raw_json, 'utf-8')
