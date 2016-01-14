@@ -13,7 +13,7 @@ viewLoader   = jinja2.FileSystemLoader(os.path.join(path, 'public', 'resource','
 env = jinja2.Environment(loader=viewLoader)
 
 
-redis_server = redis.StrictRedis()
+redis_server = redis.from_url(os.environ.get("REDIS_URL"))
 
 class FlickrImages(object):
 	@cherrypy.expose
