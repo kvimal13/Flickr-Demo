@@ -1,1 +1,1 @@
-web: python application/controller.py
+web: python application/controller.py $PORT
