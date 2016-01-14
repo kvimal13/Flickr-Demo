@@ -46,7 +46,7 @@ def start():
 
 
 if __name__ == '__main__':
-	cherrypy.config.update({'server.socket_port': 8090})
+	cherrypy.config.update({'server.socket_port': int(os.environ.get('PORT', 5000))})
 	start()
 
 
